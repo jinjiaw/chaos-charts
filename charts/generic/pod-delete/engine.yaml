@@ -2,10 +2,10 @@ apiVersion: litmuschaos.io/v1alpha1
 kind: ChaosEngine
 metadata:
   name: nginx-chaos
-  namespace: default
+  namespace: nginx
 spec:
   appinfo:
-    appns: 'default'
+    appns: 'nginx'
     applabel: 'app=nginx'
     appkind: 'deployment'
   # It can be true/false
