@@ -1,0 +1,50 @@
+apiVersion: litmuschaos.io/v1alpha1
+description:
+  message: |
+    kills nginx pods in a random manner
+kind: ChaosExperiment
+metadata:
+  name: sample-pod-delete
+spec:
+  definition:
+    scope: Namespaced
+    permissions:
+      - apiGroups: 
+          - "" 
+          - "batch" 
+          - "litmuschaos.io"
+        resources: 
+          - "jobs" 
+          - "pods" 
+          - "chaosengines" 
+          - "chaosexperiments" 
+          - "chaosresults"
+        verbs: 
+          - "create" 
+          - "list" 
+          - "get" 
+          - "update" 
+          - "patch" 
+          - "delete"
+    image: "armdocker.rnd.ericsson.se/proj-ews/rymden/go-runner:test"
+    args:
+    - -c
+    - ./experiments -name sample-pod-delete
+    command:
+    - /bin/bash
+    env:
+
+    - name: TOTAL_CHAOS_DURATION
+      value: '' 
+
+    - name: CHAOS_INTERVAL
+      value: ''
+
+    - name: LIB
+      value: ''
+
+    - name: RAMP_TIME
+      value: ''
+      
+    labels:
+      experiment: sample-pod-delete 

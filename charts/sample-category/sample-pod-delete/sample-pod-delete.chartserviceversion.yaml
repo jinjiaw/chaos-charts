@@ -1,0 +1,29 @@
+apiVersion: litmuchaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  name: sample-pod-delete 
+  version: 0.1.0
+  annotations:
+    categories: sample-category
+spec:
+  displayName: sample-pod-delete 
+  categoryDescription: >
+    kills nginx pods in a random manner 
+  keywords: 
+    - "pods" 
+    - "kubernetes" 
+    - "sample-category" 
+    - "nginx"
+  maturity: alpha 
+  minKubeVersion: 1.12.0 
+  provider: 
+    name: EWS
+  maintainers: 
+    - name: eawijnn 
+      email: jinjia.wang@ericsson.com
+  links: 
+    - name: Documentation 
+      url: https://docs.litmuschaos.io/docs/getstarted/ 
+  icon:
+    - url: 
+      mediatype: ""
